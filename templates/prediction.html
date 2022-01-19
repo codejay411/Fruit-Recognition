@@ -34,14 +34,15 @@
             <h2 class="text-xs text-green-500 tracking-widest font-medium title-font mb-1">Machine learning project</h2>
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Fruit Recognition</h1>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
-            <!-- <br><p class="text-primary"><b>{{prediction_text}}</b></p> -->
+            <br><p class="text-primary"><b>{{prediction}}</b></p><br>
+            <p class="text-primary"><b>{{confidence}}</b></p>
+
           </div>
           <div class="center">
-            <form action="/prediction" method="POST">
+            <form action="/prediction" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Select fruit image</label>
                   <input type="file" class="form-control" id="fruit" name="fruit" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
               
                 <button type="submit" class="btn btn-success">Submit</button>
