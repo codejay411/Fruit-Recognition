@@ -38,7 +38,7 @@ def prediction():
         f = request.files['fruit']
         filename= f.filename
         target = os.path.join(APP_ROOT, 'images/')
-        print(target)
+        # print(target)
         des = "/".join([target, filename])
         f.save(des)
 
@@ -46,12 +46,12 @@ def prediction():
         test_image = image.img_to_array(test_image)
         test_image = np.expand_dims(test_image, axis=0)
         prediction = model.predict(test_image)
-        print(prediction)
+        # print(prediction)
 
         predicted_class= class_name[np.argmax(prediction[0])]
-        print(predicted_class)
+        # print(predicted_class)
         confidence = round(np.max(prediction[0])*100)
-        print(confidence)
+        # print(confidence)
 
         return render_template("prediction.html", confidence= "chances -> "+str(confidence)+ "%", prediction = "prediction -> "+str(predicted_class))
 
